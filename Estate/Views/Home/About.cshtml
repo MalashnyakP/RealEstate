@@ -17,8 +17,8 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <form asp-action="About" method="get">
                 <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <li>
+                        <a href="#">
                             <label for="usr" style="color:steelblue">Price from:</label>
                             @Html.TextBox("FromPrice", Model.LowPrice.ToString(), new
             {
@@ -40,16 +40,15 @@
                         </a>
                         <br />
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <li>
+                        <a href="#">
                             <label style="color:steelblue">Street:</label>
                             @Html.TextBox("SelectedStreet", Model.Street,
                      new { @class = "form-control", onchange = "this.form.submit();" })
                         </a>
                     </li>
                     <br>
-                    <lable class="dropdown"><a href="About" class="btn btn-defaul">Show all</a></lable>
-                    <lable class="dropdown"><a href="About" class="btn btn-defaul">Show favorite</a></lable>
+                    <lable><a href="About" class="btn btn-defaul">Show all</a></lable>
                 </ul>
             </form>
         </div>
@@ -85,14 +84,10 @@
                                             <td><span class="tdCountry">@Model.Appartments[index_0].UserEmail</span></td>
                                         </tr>
                                         <tr>
-                                            <td><span class="label label-warning">@Model.Appartments[index_0].Price $</span></td>
+                                            <td><span>@Model.Appartments[index_0].Price $</span></td>
                                         </tr>
                                         <tr>
-                                            <td><br />
-                                                <button type="button" class="btn btn-defaul btn-sm">
-                                                    <span class="glyphicon glyphicon-star-empty"></span> Star it
-                                                </button>
-                                            </td>
+                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_0].Id" class="btn btn-defaul">Деталі</a></td>
                                         </tr>
                                     </table>
                                 </div>  
@@ -117,15 +112,10 @@
                                             <td><span class="tdCountry">@Model.Appartments[index_1].UserEmail</span></td>
                                         </tr>
                                         <tr>
-                                            <td><span class="label label-warning">@Model.Appartments[index_1].Price $</span></td>
+                                            <td><span>@Model.Appartments[index_1].Price $</span></td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <br />
-                                                <button type="button" class="btn btn-defaul btn-sm">
-                                                    <span class="glyphicon glyphicon-star-empty"></span> Star it
-                                                </button>
-                                            </td>
+                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_1].Id" class="btn btn-defaul">Деталі</a></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -150,15 +140,10 @@
                                             <td><span class="tdCountry">@Model.Appartments[index_2].UserEmail</span></td>
                                         </tr>
                                         <tr>
-                                            <td><span class="label label-warning">@Model.Appartments[index_2].Price $</span></td>
+                                            <td><span>@Model.Appartments[index_2].Price $</span></td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <br />
-                                                <button type="button" class="btn btn-defaul btn-sm">
-                                                    <span class="glyphicon glyphicon-star-empty"></span> Star it
-                                                </button>
-                                            </td>
+                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_2].Id" class="btn btn-defaul">Деталі</a></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -182,15 +167,10 @@
                                             <td><span class="tdCountry">@Model.Appartments[index_3].UserEmail</span></td>
                                         </tr>
                                         <tr>
-                                            <td><span class="label label-warning">@Model.Appartments[index_3].Price $</span></td>
+                                            <td><span>@Model.Appartments[index_3].Price $</span></td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <br />
-                                                <button type="button" class="btn btn-defaul btn-sm">
-                                                    <span class="glyphicon glyphicon-star-empty"></span> Star it
-                                                </button>
-                                            </td>
+                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_3].Id" class="btn btn-defaul">Деталі</a></td>
                                         </tr>
                                     </table>
                                 </div>

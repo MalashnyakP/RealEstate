@@ -11,9 +11,13 @@ namespace Estate.Controllers
     {
         public EstateController(ApplicationDbContext applicationContext) : base(applicationContext) { }
 
-        public IActionResult Details(int Number)
+        public IActionResult Details(int Id)
         {
-            return View();
+            var list = from s in context.Appartments
+                       select s;
+            list = list.Where(x => x.Id == Id);
+            var model = list.ToList()[0];
+            return View(model);
         }
     }
 }

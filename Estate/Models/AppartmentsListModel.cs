@@ -13,7 +13,6 @@ namespace Estate.Models
 
         public String Street { get; set; }
         public List<Appartment> Appartments { get; set; }
-        public List<Appartment> favorite { get; set; }
 
         public AppartmentsListModel(List<Appartment> _appartments)
         {

@@ -18,68 +18,7 @@
     </div>
     <div class="col-md-8">
         <div class="row">
-            <div class="col-sm-6 form-group">
-                <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-            </div>
-            <div class="col-sm-6 form-group">
-                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-            </div>
-        </div>
-        <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
-        <br>
-        <div class="row">
-            <div class="col-md-12 form-group">
-                <button class="btn pull-right" type="submit">Send</button>
-            </div>
+            
         </div>
     </div>
 </div>
-
-<button onclick="getLocation()">Get your Location</button>
-
-<div id="mapholder"></div>
-<script type="text/javascript">
-            var x = document.getElementById("demo");
-            function getLocation() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(showPosition, showError);
-                }
-                else { x.innerHTML = "Geolocation is not supported by this browser."; }
-            }
-
-            function showPosition(position) {
-                var latlondata = position.coords.latitude + "," + position.coords.longitude;
-                var latlon = "Your Latitude Position is:=" + position.coords.latitude + "," + "Your Longitude Position is:=" + position.coords.longitude;
-                alert(latlon)
-
-                var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
-                    + latlondata + "&zoom=16&size=1000x4000&sensor=true";
-                document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "' />";
-            }
-
-
-    var marker = new google.maps.Marker
-        (
-        {
-                position: new google.maps.LatLng(49.8353167, 24.030236),
-            map: map,
-            title: 'Click me'
-        }
-    );
-
-
-            function showError(error) {
-                if (error.code == 1) {
-                    x.innerHTML = "User denied the request for Geolocation."
-                }
-                else if (err.code == 2) {
-                    x.innerHTML = "Location information is unavailable."
-                }
-                else if (err.code == 3) {
-                    x.innerHTML = "The request to get user location timed out."
-                }
-                else {
-                    x.innerHTML = "An unknown error occurred."
-                }
-            }
-</script>

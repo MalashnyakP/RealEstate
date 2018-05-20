@@ -9,6 +9,7 @@ namespace Estate.Models
         public virtual int Price { get; set; }
         public virtual string Images { get; set; }
         public virtual string UserEmail { get; set; }
+        public virtual string Description { get; set; }
 
         public Appartment() { }
     }
