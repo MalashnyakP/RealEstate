@@ -15,7 +15,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="myNavbar">
-            <form asp-action="About" method="get">
+            <form asp-action="Store" method="get">
                 <ul class="nav navbar-nav">
 
                     <label for="usr" style="color:steelblue">Price from:</label>
@@ -39,10 +39,10 @@
                     <br />
                     <label style="color:steelblue">Street:</label>
                     @Html.TextBox("SelectedStreet", Model.Street,
-                                  new { @class = "form-control", onchange = "this.form.submit();" })
+                                            new { @class = "form-control", onchange = "this.form.submit();" })
 
                     <br>
-                    <a href="About" class="btn btn-defaul">Show all</a>
+                    <a href="Store" class="btn btn-defaul">Show all</a>
                 </ul>
             </form>
         </div>
@@ -183,3 +183,4 @@
         <br><br>
 
     </div>
+</div>
