@@ -1,8 +1,35 @@
 ﻿@using Estate.Models
 @model Appartment
 @{
-    ViewData["Title"] = "View";
+    ViewData["Title"] = "Details";
 }
 
-<h2>View</h2>
 
+<div class="gallery_product col-lg-9 col-md-9 col-sm-12 col-xs-12 filter hdpe">
+    <div class="panel panel-danger">
+        <div class="panel-body">
+            <div class="panel panel-danger">
+                <div class="panel-body">
+                    <table border="0" style="width: 50%; cursor: pointer;">
+                        <tr>
+                            <td><img src="~/images/@Model.Images" class="img-responsive" style="width:500px;height:200px;"></td>
+                        </tr>
+                        <tr>
+                            <td>@Model.Adress</td>
+                        </tr>
+                        <tr>
+                            <td>@Model.UserEmail</td>
+                        </tr>
+                        <tr>
+                            <td>@Model.Price $</td>
+                        </tr>
+                        <tr>
+                            <td>@Model.Description</td>
+                        </tr>
+                    </table>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

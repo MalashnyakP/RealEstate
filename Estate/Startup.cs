@@ -26,7 +26,6 @@ namespace Estate
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //гулі, гулі, голуби, Софа тут всьо порішала
             services.AddOptions();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
