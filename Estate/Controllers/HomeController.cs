@@ -13,14 +13,25 @@ namespace Estate.Controllers
     {
         public HomeController(ApplicationDbContext applicationContext) : base(applicationContext) { }
 
-        public IActionResult About(int? FromPrice, int? TopPrice, string SelectedStreet)
+        public IActionResult Store(string FromPrice, string TopPrice, string SelectedStreet)
         {
             var list = from s in context.Appartments
                        select s;
 
-            if (TopPrice.HasValue && FromPrice.HasValue)
+            if (TopPrice != null || FromPrice != null)
             {
-                list = list.Where(x => x.Price > FromPrice && x.Price < TopPrice);
+                if (TopPrice == null)
+                {
+                    list = list.Where(x => x.Price > int.Parse(FromPrice));
+                }
+                else if (FromPrice == null)
+                {
+                    list = list.Where(x => x.Price < int.Parse(TopPrice));
+                }
+                else
+                {
+                    list = list.Where(x => x.Price > int.Parse(FromPrice) && x.Price < int.Parse(TopPrice));
+                }
             }
 
             if (!String.IsNullOrEmpty(SelectedStreet))

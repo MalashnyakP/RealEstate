@@ -1,0 +1,138 @@
+﻿@using Estate.Models
+@model AppartmentsListModel
+
+@{
+    ViewData["Title"] = "Manage";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        @if (Model != null)
+        {
+            for (int i = 0; i < Model.Appartments.Count; i += 4)
+            {
+                int index_0 = i;
+                int index_1 = i + 1;
+                int index_2 = i + 2;
+                int index_3 = i + 3;
+
+                <div class="row" style="margin-top: 50px;">
+                    @if (index_0 < Model.Appartments.Count)
+                    {
+                        <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter hdpe">
+                            <div class="panel panel-danger">
+                                <div class="panel-body">
+                                    <table border="0" style="width: 100%; cursor: pointer;">
+                                        <tr>
+                                            <td><img src="~/images/@Model.Appartments[index_0].Images" class="img-responsive" style="width:500px;height:200px;"></td>
+                                            <td><a asp-area="" asp-route-id="@Model.Appartments[index_0].Id" asp-controller="Estate" asp-action="Details"></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Model.Appartments[index_0].Adress</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Model.Appartments[index_0].UserEmail</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>@Model.Appartments[index_0].Price $</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_0].Id" class="btn btn-defaul">Деталі</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    @if (index_1 < Model.Appartments.Count)
+                    {
+                        <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter hdpe">
+                            <div class="panel panel-danger">
+                                <div class="panel-body">
+                                    <table border="0" style="width: 100%; cursor: pointer;">
+                                        <tr>
+                                            <td><img src="~/images/@Model.Appartments[index_1].Images" class="img-responsive" style="width:500px;height:200px;"></td>
+                                            <td><a asp-area="" asp-route-id="@Model.Appartments[index_1].Id" asp-controller="Estate" asp-action="Details"></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Model.Appartments[index_1].Adress</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Model.Appartments[index_1].UserEmail</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>@Model.Appartments[index_1].Price $</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_1].Id" class="btn btn-defaul">Деталі</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    @if (index_2 < Model.Appartments.Count)
+                    {
+                        <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter hdpe">
+                            <div class="panel panel-danger">
+                                <div class="panel-body">
+                                    <table border="0" style="width: 100%; cursor: pointer;">
+                                        <tr>
+                                            <td><img src="~/images/@Model.Appartments[index_2].Images" class="img-responsive" style="width:500px;height:200px;"></td>
+                                            <td><a asp-area="" asp-route-id="@Model.Appartments[index_2].Id" asp-controller="Estate" asp-action="Details"></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Model.Appartments[index_2].Adress</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Model.Appartments[index_2].UserEmail</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>@Model.Appartments[index_2].Price $</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_2].Id" class="btn btn-defaul">Деталі</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    @if (index_3 < Model.Appartments.Count)
+                    {
+                        <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter hdpe">
+                            <div class="panel panel-danger">
+                                <div class="panel-body">
+                                    <table border="0" style="width: 100%; cursor: pointer;">
+                                        <tr>
+                                            <td><img src="~/images/@Model.Appartments[index_3].Images" class="img-responsive" style="width:500px;height:200px;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Model.Appartments[index_3].Adress</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Model.Appartments[index_3].UserEmail</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>@Model.Appartments[index_3].Price $</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_3].Id" class="btn btn-defaul">Деталі</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        }
+        else
+        {
+            <span>There is no estate yet.</span>
+        }
+    </div>
+</div>
