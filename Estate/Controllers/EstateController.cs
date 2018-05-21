@@ -31,5 +31,13 @@ namespace Estate.Controllers
             AppartmentsListModel model = new AppartmentsListModel(list.ToList());
             return View(model);
         }
+
+        [HttpPost]       
+        public ActionResult Delete(int id)
+        {
+            context.Appartments.Remove(context.Appartments.Find(id));
+            context.SaveChanges();
+            return RedirectToAction("Manage");
+        }
     }
 }

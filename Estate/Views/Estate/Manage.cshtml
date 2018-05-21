@@ -37,7 +37,11 @@
                                             <td><span>@Model.Appartments[index_0].Price $</span></td>
                                         </tr>
                                         <tr>
-                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_0].Id" class="btn btn-defaul">Деталі</a></td>
+                                            @using (Html.BeginForm("Delete", "Estate", new { id = Model.Appartments[index_0].Id }))
+                                            {
+                                                <input type="submit" value="Delete"
+                                                       onclick="return confirm('Ви впевнені, що хочете видалити цю квартиру?');" />
+                                            }
                                         </tr>
                                     </table>
                                 </div>
@@ -65,7 +69,11 @@
                                             <td><span>@Model.Appartments[index_1].Price $</span></td>
                                         </tr>
                                         <tr>
-                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_1].Id" class="btn btn-defaul">Деталі</a></td>
+                                            @using (Html.BeginForm("Delete", "Estate", new { id = Model.Appartments[index_1].Id }))
+                                            {
+                                                <input type="submit" value="Delete"
+                                                       onclick="return confirm('Ви впевнені, що хочете видалити цю квартиру?');" />
+                                            }
                                         </tr>
                                     </table>
                                 </div>
@@ -93,7 +101,13 @@
                                             <td><span>@Model.Appartments[index_2].Price $</span></td>
                                         </tr>
                                         <tr>
-                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_2].Id" class="btn btn-defaul">Деталі</a></td>
+                                            <td>
+                                                @using (Html.BeginForm("Delete", "Estate", new { id = Model.Appartments[index_2].Id }))
+                                                {
+                                                    <input type="submit" value="Delete"
+                                                           onclick="return confirm('Ви впевнені, що хочете видалити цю квартиру?');" />
+                                                }
+                                            </td>
                                         </tr>
                                     </table>
                                 </div>
@@ -120,7 +134,11 @@
                                             <td><span>@Model.Appartments[index_3].Price $</span></td>
                                         </tr>
                                         <tr>
-                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_3].Id" class="btn btn-defaul">Деталі</a></td>
+                                            @using (Html.BeginForm("Delete", "Estate", new { id = Model.Appartments[index_3].Id }))
+                                            {
+                                                <input type="submit" value="Delete"
+                                                       onclick="return confirm('Ви впевнені, що хочете видалити цю квартиру?');" />
+                                            }
                                         </tr>
                                     </table>
                                 </div>
