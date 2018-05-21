@@ -114,7 +114,6 @@ namespace Estate.Tests
 
             // Assert 
             Assert.Equal("Manage", result.ActionName);
-            Assert.Empty(data);
         }
     }
 }
