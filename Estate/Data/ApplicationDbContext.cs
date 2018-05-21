@@ -10,8 +10,9 @@ namespace Estate.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Appartment> Appartments { get; set; }
-        
+        public virtual DbSet<Appartment> Appartments { get; set; }
+
+        public ApplicationDbContext() { }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
