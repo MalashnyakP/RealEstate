@@ -15,34 +15,37 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="myNavbar">
-            <form asp-action="Store" method="get">
+            <form asp-action="About" method="get">
                 <ul class="nav navbar-nav">
-
-                    <label for="usr" style="color:steelblue">Price from:</label>
-
-                    @Html.TextBox("FromPrice", Model.LowPrice, new
-                    {
-                        @class = "form-control",
-                        @id = "from",
-                        onchange = "this.form.submit();",
-
-                    })
-
-                    <label for="pwd" style="color:steelblue">To:</label>
-                    @Html.TextBox("TopPrice", Model.TopPrice, new
-                    {
-                        @class = "form-control",
-                        @id = "to",
-                        onchange = "this.form.submit();",
-
-                    })
-                    <br />
-                    <label style="color:steelblue">Street:</label>
-                    @Html.TextBox("SelectedStreet", Model.Street,
-                                            new { @class = "form-control", onchange = "this.form.submit();" })
-
+                    <li>
+                        <a href="#">
+                            <label for="usr" style="color:steelblue">Price from:</label>
+                            @Html.TextBox("FromPrice", Model.LowPrice.ToString(), new
+                            {
+                                @class = "form-control",
+                                @id = "from",
+                                onchange = "this.form.submit();",
+                                @type = "number",
+                            })
+                            <label for="pwd" style="color:steelblue">To:</label>
+                            @Html.TextBox("TopPrice", Model.TopPrice.ToString(), new
+                            {
+                                @class = "form-control",
+                                @id = "to",
+                                onchange = "this.form.submit();",
+                                type = "number",
+                            })
+                        </a><br />
+                    </li>
+                    <li>
+                        <a href="#">
+                            <label style="color:steelblue">Street:</label>
+                            @Html.TextBox("SelectedStreet", Model.Street,
+                                     new { @class = "form-control", onchange = "this.form.submit();" })
+                        </a>
+                    </li>
                     <br>
-                    <a href="Store" class="btn btn-defaul">Show all</a>
+                    <lable><a href="About" class="btn btn-defaul">Show all</a></lable>
                 </ul>
             </form>
         </div>
@@ -72,16 +75,12 @@
                                             <td><a asp-area="" asp-route-id="@Model.Appartments[index_0].Id" asp-controller="Estate" asp-action="Details"></a></td>
                                         </tr>
                                         <tr>
-                                            <td>@Model.Appartments[index_0].Adress</td>
+                                            <td>
+                                                <a href="/Estate/Details?Id=@Model.Appartments[index_0].Id" class="btn btn-defaul">@Model.Appartments[index_0].Adress</a>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td>@Model.Appartments[index_0].UserEmail</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>@Model.Appartments[index_0].Price $</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_0].Id" class="btn btn-defaul">Деталі</a></td>
+                                            <td><div style="text-align:right">@Model.Appartments[index_0].Price $</div></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -100,16 +99,12 @@
                                             <td><a asp-area="" asp-route-id="@Model.Appartments[index_1].Id" asp-controller="Estate" asp-action="Details"></a></td>
                                         </tr>
                                         <tr>
-                                            <td>@Model.Appartments[index_1].Adress</td>
+                                            <td>
+                                                <a href="/Estate/Details?Id=@Model.Appartments[index_1].Id" class="btn btn-defaul">@Model.Appartments[index_1].Adress</a>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td>@Model.Appartments[index_1].UserEmail</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>@Model.Appartments[index_1].Price $</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_1].Id" class="btn btn-defaul">Деталі</a></td>
+                                            <td><div style="text-align:right">@Model.Appartments[index_1].Price $</div></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -128,16 +123,12 @@
                                             <td><a asp-area="" asp-route-id="@Model.Appartments[index_2].Id" asp-controller="Estate" asp-action="Details"></a></td>
                                         </tr>
                                         <tr>
-                                            <td>@Model.Appartments[index_2].Adress</td>
+                                            <td>
+                                                <a href="/Estate/Details?Id=@Model.Appartments[index_2].Id" class="btn btn-defaul">@Model.Appartments[index_2].Adress</a>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td>@Model.Appartments[index_2].UserEmail</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>@Model.Appartments[index_2].Price $</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_2].Id" class="btn btn-defaul">Деталі</a></td>
+                                            <td><div style="text-align:right">@Model.Appartments[index_2].Price $</div></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -155,16 +146,12 @@
                                             <td><img src="~/images/@Model.Appartments[index_3].Images" class="img-responsive" style="width:500px;height:200px;"></td>
                                         </tr>
                                         <tr>
-                                            <td>@Model.Appartments[index_3].Adress</td>
+                                            <td>
+                                                <a href="/Estate/Details?Id=@Model.Appartments[index_3].Id" class="btn btn-defaul">@Model.Appartments[index_3].Adress</a>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td>@Model.Appartments[index_3].UserEmail</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span>@Model.Appartments[index_3].Price $</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="/Estate/Details?Id=@Model.Appartments[index_3].Id" class="btn btn-defaul">Деталі</a></td>
+                                            <td><div style="text-align:right">@Model.Appartments[index_3].Price $</div></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -178,9 +165,6 @@
         {
             <span>There is no estate yet.</span>
         }
-        <br /><br />
-
-        <br><br>
-
-    </div>
+<br /><br />
+<br><br>
 </div>
