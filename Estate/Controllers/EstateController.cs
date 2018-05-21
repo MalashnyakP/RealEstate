@@ -39,5 +39,10 @@ namespace Estate.Controllers
             context.SaveChanges();
             return RedirectToAction("Manage");
         }
+
+        public ActionResult Add()
+        {
+            return View();
+        }
     }
 }
